@@ -5,7 +5,6 @@
 #   (b) three-dimensional phase-space trajectory
 #   (c) debt service, profit share, and inflation
 #
-# The simulation uses the unprojected positive-part stochastic system
 # implemented in keen_model_functions.py.
 
 from __future__ import annotations
