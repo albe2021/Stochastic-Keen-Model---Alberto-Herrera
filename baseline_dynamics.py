@@ -209,7 +209,7 @@ def simulate_baseline_path(
     x0: Sequence[float] = BASELINE_INITIAL_CONDITION,
 ) -> tuple[KeenModel, np.ndarray, np.ndarray]:
     """
-    Simulate one unprojected baseline stochastic path.
+    Simulate one baseline stochastic path.
 
     If omega or lambda lies outside [0, 1], its direct Brownian
     coefficient is zero while its drift remains active.
