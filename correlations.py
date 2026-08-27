@@ -43,7 +43,7 @@ def simulate_deterministic(
     x0: tuple[float, float, float] = INITIAL_CONDITION,
 ) -> tuple[np.ndarray, np.ndarray]:
     """
-    Integrate the deterministic drift system without projection.
+    Integrate the deterministic drift system.
 
     A high-accuracy adaptive ODE solver is used, with output evaluated on the
     same time grid as the stochastic Euler--Maruyama simulation.
@@ -90,11 +90,7 @@ def simulate_stochastic(
     x0: tuple[float, float, float] = INITIAL_CONDITION,
 ) -> tuple[np.ndarray, np.ndarray]:
     """
-    Simulate the unprojected positive-part stochastic system.
-
-    No clipping, reflection, projection, or epsilon floor is applied. If a
-    share coordinate lies outside [0, 1], its direct Brownian coefficient is
-    zero while its drift remains active.
+    Simulate the positive-part stochastic system.
     """
     model = KeenModel(BASELINE_PARAMS)
     return model.simulate_path(
